@@ -1,0 +1,23 @@
+version: '3'
+
+volumes:
+  maps:
+
+services:
+
+  calc:
+    image: robcurrie/dtmp
+    volumes:
+      - maps:/maps
+    entrypoint: python dtmp/calc.py -i 1
+
+  hub:
+    image: robcurrie/dtmp
+    ports:
+      - "5000:5000"
+    volumes:
+      - maps:/maps
+
+    volumes:
+      - .:/usr/src/app
+    entrypoint: uwsgi --ini uwsgi.ini --honour-stdin --python-autoreload=1 --processes=1 --threads=1

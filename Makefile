@@ -7,7 +7,7 @@ debug:
 run:
 	docker-compose up -d
 
-down:
+stop:
 	docker-compose -f docker-compose-debug.yml down
 
 shell:

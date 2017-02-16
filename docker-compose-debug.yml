@@ -15,8 +15,5 @@ services:
       - "5000:5000"
     volumes:
       - maps:/maps
-
-    # Run out of local folder with reload on edit
-    volumes:
       - .:/usr/src/app
     command: --honour-stdin --python-autoreload=1 --processes=1 --threads=1

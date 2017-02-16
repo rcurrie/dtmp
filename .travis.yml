@@ -12,8 +12,8 @@ install:
   - pip install flake8
 
 script:
-  - flake8 .
+  - flake8 . --max-line-length=100
   - make build
-  - docker-compose up -d
+  - make run
   - sleep 5
   - make test

@@ -1,5 +1,5 @@
 build:
-	docker build -t rcurrie/dtmp .
+	docker build -t robcurrie/dtmp .
 
 debug:
 	docker-compose -f docker-compose-debug.yml up
